@@ -116,6 +116,46 @@
           }
         }
       }
+    },
+    "stAngularAnalytics": {
+      "root": "projects/st-angular-analytics",
+      "sourceRoot": "projects/st-angular-analytics/src",
+      "projectType": "library",
+      "prefix": "st",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/st-angular-analytics/tsconfig.lib.json",
+            "project": "projects/st-angular-analytics/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/st-angular-analytics/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/st-angular-analytics/src/test.ts",
+            "tsConfig": "projects/st-angular-analytics/tsconfig.spec.json",
+            "karmaConfig": "projects/st-angular-analytics/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/st-angular-analytics/tsconfig.lib.json",
+              "projects/st-angular-analytics/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "lib-angular-analytics"

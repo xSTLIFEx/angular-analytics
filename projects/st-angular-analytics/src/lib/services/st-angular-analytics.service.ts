@@ -4,7 +4,7 @@ declare var gtag: Function;
 @Injectable({
   providedIn: 'root'
 })
-export class GoogleAnalyticsService {
+export class StAngularAnalyticsService {
 
   constructor() { }
 
